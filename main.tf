@@ -1,11 +1,15 @@
-provider "aws" {
-  region = "us-east-1"
-}
+provider "aws" {}
 
-resource "aws_ecs_cluster" "my_cluster" {
-  name = "testingecscluster"
+resource "aws_ecs_cluster" "example" {
+  name = "mytestingecs"
 }
 
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "clouvixbucket3234342"
+  bucket = "clouvixFinaltest235423825"
+  acl    = "private"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
 }
